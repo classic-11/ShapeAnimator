@@ -1,0 +1,48 @@
+<Window x:Class="ShapeAnimator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Shape Animator" Height="500" Width="850">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+
+        <!-- BLACK DRAWING CANVAS -->
+        <Canvas Name="ShapeCanvas"
+                Grid.Row="0"
+                Background="Black"
+                MouseUp="ShapeCanvas_MouseUp"
+                MouseMove="ShapeCanvas_MouseMove"/>
+
+        <!-- TOOLBAR -->
+        <WrapPanel Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="8">
+
+            <!-- Shape selector -->
+            <Label Content="Draw:" VerticalAlignment="Center" Foreground="Gray"/>
+            <Button Name="CircleButton"    Width="90" Height="32" Margin="4 0"
+                    Click="CircleButton_Click">Circle</Button>
+            <Button Name="RectangleButton" Width="90" Height="32" Margin="4 0"
+                    Click="RectangleButton_Click">Rectangle</Button>
+            <Button Name="TriangleButton"  Width="90" Height="32" Margin="4 0"
+                    Click="TriangleButton_Click">Triangle</Button>
+
+            <Separator Width="20"/>
+
+            <!-- Animation controls -->
+            <Label Content="Animate:" VerticalAlignment="Center" Foreground="Gray"/>
+            <Button Name="StepButton" Width="70" Height="32" Margin="4 0"
+                    Click="StepButton_Click">Step</Button>
+            <Button Name="PlayButton" Width="70" Height="32" Margin="4 0"
+                    Click="PlayButton_Click">▶ Play</Button>
+            <Button Name="StopButton" Width="70" Height="32" Margin="4 0"
+                    Click="StopButton_Click">■ Stop</Button>
+        </WrapPanel>
+    </Grid>
+</Window>
